@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,80 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toystory3" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-hE-zcA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="324.66666666666669"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="G4y-5t-y84">
+                                <rect key="frame" x="0.0" y="264.66666666666669" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tJc-Bz-I7p"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P4C-hE-zcA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="9a7-sB-A7h"/>
+                            <constraint firstItem="P4C-hE-zcA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AJy-ro-kls"/>
+                            <constraint firstItem="P4C-hE-zcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HZW-qM-Cod"/>
+                            <constraint firstItem="G4y-5t-y84" firstAttribute="trailing" secondItem="P4C-hE-zcA" secondAttribute="trailing" id="Ln5-o3-p9M"/>
+                            <constraint firstItem="P4C-hE-zcA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LwY-Dv-VYx"/>
+                            <constraint firstItem="G4y-5t-y84" firstAttribute="bottom" secondItem="P4C-hE-zcA" secondAttribute="bottom" id="Olk-rj-SZ8"/>
+                            <constraint firstItem="G4y-5t-y84" firstAttribute="leading" secondItem="P4C-hE-zcA" secondAttribute="leading" id="dWz-9b-OSx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="126.35467980295567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Ny-E0-VGQ">
+            <objects>
+                <viewController id="sUh-EE-MxO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YNm-l4-EsY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQB-Rj-nMZ">
+                                <rect key="frame" x="16" y="108.00000000000001" width="184.33333333333334" height="40.666666666666671"/>
+                                <string key="text">Este é um texto
+que está em duas linhas</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgj-aD-Yl5">
+                                <rect key="frame" x="16" y="184" width="184.33333333333334" height="40.666666666666657"/>
+                                <string key="text">Este é um texto
+que está em duas linhas</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UQB-Rj-nMZ" firstAttribute="leading" secondItem="dl9-Ft-6fY" secondAttribute="leading" constant="16" id="Fbx-JR-gj2"/>
+                            <constraint firstItem="jgj-aD-Yl5" firstAttribute="top" secondItem="UQB-Rj-nMZ" secondAttribute="bottom" constant="35.329999999999998" id="J2a-1r-aXy"/>
+                            <constraint firstItem="jgj-aD-Yl5" firstAttribute="left" secondItem="dl9-Ft-6fY" secondAttribute="left" constant="16" id="eH7-si-zCK"/>
+                            <constraint firstItem="UQB-Rj-nMZ" firstAttribute="top" secondItem="dl9-Ft-6fY" secondAttribute="top" constant="64" id="tH9-ED-93H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dl9-Ft-6fY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMx-VN-L6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradient" width="600" height="120"/>
+        <image name="toystory3" width="400" height="330"/>
+    </resources>
 </document>
