@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mario.png",
+      "filename" : "jurassic.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "jurassic@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "jurassic@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
