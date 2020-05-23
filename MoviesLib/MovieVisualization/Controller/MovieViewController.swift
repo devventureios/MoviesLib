@@ -23,26 +23,7 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadMovies()
     }
-    
-    func loadMovies() {
-        guard let jsonURL = Bundle.main.url(forResource: "movies", withExtension: "json") else {return}
-        do {
-            let jsonData = try Data(contentsOf: jsonURL)
-            let jsonDecoder = JSONDecoder()
-//            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-//            jsonDecoder.dateDecodingStrategy = .iso8601
-            let movies = try jsonDecoder.decode([Movie].self, from: jsonData)
-            movies.forEach({print($0.categories)})
-        } catch {
-            print(error)
-        }
-        
-        
-        
-    }
-
 }
 
 

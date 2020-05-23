@@ -17,6 +17,14 @@ struct Movie: Decodable {
     let summary: String
     let image: String
     
+    var smallImage: String {
+        return image + "small"
+    }
+    
+    var ratingFormatted: String {
+        return "⭐️ \(rating)/10.0"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title
         case categories = "movie_categories"
@@ -27,7 +35,7 @@ struct Movie: Decodable {
     }
     
     /*
-    init(from decoder: Decoder) {
+    init(from decoder: Decoder) throws {
         let container = try? decoder.container(keyedBy: CodingKeys.self)
         title = try container?.decodeIfPresent(String.self, forKey: .title) ?? "Nenhum título"
     }
