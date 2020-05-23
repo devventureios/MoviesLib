@@ -14,7 +14,7 @@ struct Movie: Decodable {
     var categories: String?
     let duration: String
     let rating: Double
-    let summary: String
+    var summary: String?
     let image: String
     
     var smallImage: String {

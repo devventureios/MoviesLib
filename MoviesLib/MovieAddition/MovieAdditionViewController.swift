@@ -12,8 +12,6 @@ class MovieAdditionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var settings = Settings(description: "Olá")
     }
     
 
