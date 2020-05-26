@@ -16,7 +16,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var labelRating: UILabel!
     
     func configure(with movie: Movie) {
-        imageViewPoster.image = UIImage(named: movie.smallImage)
+        imageViewPoster.image = movie.poster
         labelTitle.text = movie.title
         labelSummary.text = movie.summary
         labelRating.text = movie.ratingFormatted

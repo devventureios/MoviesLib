@@ -7,41 +7,47 @@
 //
 
 import UIKit
+import CoreData
 
 class MoviesTableViewController: UITableViewController {
 
     // MARK: - Properties
-    var movies: [Movie] = []
+    var label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 22))
+    var fetchedResultController: NSFetchedResultsController<Movie>!
     
     // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        label.text = "Sem filmes cadastrados"
+        label.textAlignment = .center
+        
         loadMovies()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let movieViewController = segue.destination as? MovieViewController
-        if let movieIndex = tableView.indexPathForSelectedRow?.row {
-            movieViewController?.movie = movies[movieIndex]
+        if let movieViewController = segue.destination as? MovieViewController {
+            movieViewController.movie = fetchedResultController.object(at: tableView.indexPathForSelectedRow!)
         }
     }
     
     // MARK: - Methods
     private func loadMovies() {
-        guard let jsonURL = Bundle.main.url(forResource: "movies", withExtension: "json") else {return}
-                do {
-                    let jsonData = try Data(contentsOf: jsonURL)
-                    let jsonDecoder = JSONDecoder()
-        //            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        //            jsonDecoder.dateDecodingStrategy = .iso8601
-                    movies = try jsonDecoder.decode([Movie].self, from: jsonData)
-//                    movies.forEach({print($0.categories)})
-                    
-                    tableView.reloadData()
-                    
-                } catch {
-                    print(error)
-                }
+        let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultController.delegate = self
+        
+        do {
+            try fetchedResultController.performFetch()
+        } catch {
+            print(error)
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -53,7 +59,15 @@ class MoviesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movies.count
+        
+        if let count = fetchedResultController.fetchedObjects?.count {
+            tableView.backgroundView = count == 0 ? label : nil
+            return count
+        } else {
+            tableView.backgroundView = label
+            return 0
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,7 +75,7 @@ class MoviesTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let movie = movies[indexPath.row]
+        let movie = fetchedResultController.object(at: indexPath)
         cell.configure(with: movie)
 
         return cell
@@ -113,4 +127,11 @@ class MoviesTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+extension MoviesTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
 }

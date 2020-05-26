@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0uR-no-XOa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="32A-DK-I5n">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toystory3" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-hE-zcA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-hE-zcA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="270.66666666666669"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="G4y-5t-y84">
@@ -267,7 +267,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="1kE-an-X0c">
+                    <navigationItem key="navigationItem" id="1kE-an-X0c">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="mAg-Aw-o9C">
                             <connections>
                                 <segue destination="0uR-no-XOa" kind="show" id="g6L-Na-Ft5"/>
@@ -291,7 +291,7 @@
         <!--Cadastro-->
         <scene sceneID="PQW-EF-nlO">
             <objects>
-                <viewController id="0uR-no-XOa" sceneMemberID="viewController">
+                <viewController id="0uR-no-XOa" customClass="MovieAdditionViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxZ-SJ-Iyx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,6 +361,9 @@
                                                                     <constraint firstAttribute="height" constant="30" id="OeW-6M-uZb"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Selecionar Imagem"/>
+                                                                <connections>
+                                                                    <action selector="selectImage:" destination="0uR-no-XOa" eventType="touchUpInside" id="QuG-lP-bqH"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gpo-4g-lRd">
                                                                 <rect key="frame" x="0.0" y="32" width="335" height="140"/>
@@ -414,6 +417,9 @@
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addUpdateMovie:" destination="0uR-no-XOa" eventType="touchUpInside" id="NcT-IM-IEV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -447,6 +453,15 @@
                         <viewLayoutGuide key="safeArea" id="8fI-Cy-MV2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro" id="KEC-Ob-cSC"/>
+                    <connections>
+                        <outlet property="buttonAddEdit" destination="rcH-bD-XN3" id="sbr-Gk-o4t"/>
+                        <outlet property="imageViewPoster" destination="Gpo-4g-lRd" id="Ses-gP-5YN"/>
+                        <outlet property="labelCategories" destination="avg-xu-Jd9" id="0go-Bx-YT0"/>
+                        <outlet property="textFieldDuration" destination="yd6-ci-pOP" id="ILj-Di-2Pa"/>
+                        <outlet property="textFieldRating" destination="7sA-ok-RoI" id="6G7-uF-FyK"/>
+                        <outlet property="textFieldTitle" destination="Fuf-vV-tI4" id="C5A-3Z-S17"/>
+                        <outlet property="textViewSummary" destination="boB-za-mjK" id="FJL-TA-t36"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYY-vK-cB4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -473,11 +488,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gqI-g4-w3F"/>
+        <segue reference="g6L-Na-Ft5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gradient" width="600" height="120"/>
         <image name="play" width="53" height="53"/>
-        <image name="toystory3" width="400" height="330"/>
     </resources>
 </document>

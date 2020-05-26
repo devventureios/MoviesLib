@@ -33,14 +33,23 @@ class MovieViewController: UIViewController {
         //Justo for Ygor!!
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         //navigationController?.setNavigationBarHidden(true, animated: true)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let movie = movie {
-            imageViewPoster.image = UIImage(named: movie.image)
+            imageViewPoster.image = movie.poster
             labelTitle.text = movie.title
-            labelCategories.text = movie.categories
+            //labelCategories.text = movie.categories
             labelDuration.text = movie.duration
             labelRating.text = movie.ratingFormatted
             textViewSummary.text = movie.summary
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MovieAdditionViewController {
+            vc.movie = movie
         }
     }
 }
