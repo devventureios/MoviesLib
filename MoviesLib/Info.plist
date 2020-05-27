@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Você precisa autorizar o acesso ao seu álbum de fotos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Libera essa merda seu zé ruela</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

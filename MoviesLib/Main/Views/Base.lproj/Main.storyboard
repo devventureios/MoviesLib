@@ -311,7 +311,10 @@
                                                             <constraint firstAttribute="height" constant="34" id="jYw-bk-jYc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="0uR-no-XOa" id="je0-RP-Vjp"/>
+                                                        </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-mr-eMq">
                                                         <rect key="frame" x="0.0" y="44" width="335" height="34"/>
@@ -322,7 +325,10 @@
                                                                     <constraint firstAttribute="height" constant="34" id="xE6-0i-NFH"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="0uR-no-XOa" id="Bsv-RX-dP4"/>
+                                                                </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duração" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yd6-ci-pOP">
                                                                 <rect key="frame" x="172.66666666666663" y="0.0" width="162.33333333333337" height="34"/>
@@ -330,7 +336,10 @@
                                                                     <constraint firstAttribute="height" constant="34" id="XMm-av-dgu"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="0uR-no-XOa" id="s68-SU-Yci"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -343,6 +352,9 @@
                                                                     <constraint firstAttribute="height" constant="24" id="0Uv-4e-TXH"/>
                                                                     <constraint firstAttribute="width" constant="24" id="uHL-Ny-obm"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <segue destination="whG-5Y-oeM" kind="show" id="DLB-KM-YEp"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avg-xu-Jd9">
                                                                 <rect key="frame" x="34" y="0.0" width="301" height="24"/>
@@ -393,12 +405,15 @@
                                                                 </constraints>
                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="8"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="0uR-no-XOa" id="NO4-cj-jpX"/>
+                                                                </connections>
                                                             </textView>
                                                         </subviews>
                                                     </stackView>
@@ -457,6 +472,7 @@
                         <outlet property="buttonAddEdit" destination="rcH-bD-XN3" id="sbr-Gk-o4t"/>
                         <outlet property="imageViewPoster" destination="Gpo-4g-lRd" id="Ses-gP-5YN"/>
                         <outlet property="labelCategories" destination="avg-xu-Jd9" id="0go-Bx-YT0"/>
+                        <outlet property="scrollView" destination="IyB-JZ-bZj" id="tDi-bJ-UCf"/>
                         <outlet property="textFieldDuration" destination="yd6-ci-pOP" id="ILj-Di-2Pa"/>
                         <outlet property="textFieldRating" destination="7sA-ok-RoI" id="6G7-uF-FyK"/>
                         <outlet property="textFieldTitle" destination="Fuf-vV-tI4" id="C5A-3Z-S17"/>
@@ -466,6 +482,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYY-vK-cB4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1412" y="-471.42857142857144"/>
+        </scene>
+        <!--Categorias-->
+        <scene sceneID="58p-7D-90S">
+            <objects>
+                <tableViewController id="whG-5Y-oeM" customClass="CategoriesTableViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jeZ-TR-vIA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="e1l-aX-H53">
+                            <rect key="frame" x="0.0" y="99.666667938232422" width="375" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="U1Q-qB-xB3" style="IBUITableViewCellStyleDefault" id="R0c-QJ-UHP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R0c-QJ-UHP" id="z5F-uI-1Ib">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U1Q-qB-xB3">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="whG-5Y-oeM" id="eQV-nO-JOK"/>
+                            <outlet property="delegate" destination="whG-5Y-oeM" id="hsN-aN-6ej"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categorias" id="bt4-1o-zOc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="i45-15-vtl">
+                            <connections>
+                                <action selector="add:" destination="whG-5Y-oeM" id="MCg-MX-hCL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXd-hq-bgy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264.8000000000002" y="-471.42857142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xa6-Va-Mgg">

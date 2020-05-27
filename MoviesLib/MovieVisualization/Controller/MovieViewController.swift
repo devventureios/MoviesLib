@@ -40,7 +40,11 @@ class MovieViewController: UIViewController {
         if let movie = movie {
             imageViewPoster.image = movie.poster
             labelTitle.text = movie.title
-            //labelCategories.text = movie.categories
+            if let categories = movie.categories as? Set<Category>, categories.count > 0 {
+                labelCategories.text = categories.compactMap({$0.name}).joined(separator: " | ")
+            } else {
+                labelCategories.text = ""
+            }
             labelDuration.text = movie.duration
             labelRating.text = movie.ratingFormatted
             textViewSummary.text = movie.summary
