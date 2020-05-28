@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Aceita aí, cacete de agulha!</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Você precisa autorizar o acesso ao seu álbum de fotos</string>
 	<key>NSCameraUsageDescription</key>

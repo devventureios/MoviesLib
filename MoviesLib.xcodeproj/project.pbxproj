@@ -12,6 +12,7 @@
 		2222A623247C917D0099149F /* UIViewController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222A622247C917D0099149F /* UIViewController+Context.swift */; };
 		2222A62B247CA0AF0099149F /* Movie+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222A62A247CA0AF0099149F /* Movie+Formatting.swift */; };
 		225191F0247DE48A0094CD3C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225191EF247DE48A0094CD3C /* CategoriesTableViewController.swift */; };
+		225191F4247F216F0094CD3C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225191F3247F216F0094CD3C /* MapViewController.swift */; };
 		2280D9CA2478856E00131B82 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2280D9C82478856D00131B82 /* Help.storyboard */; };
 		2280D9CC2478862F00131B82 /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2280D9CB2478862F00131B82 /* movies.json */; };
 		228EBE4024796CF500EF7A3C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228EBE3F24796CF500EF7A3C /* MovieTableViewCell.swift */; };
@@ -32,6 +33,7 @@
 		2222A622247C917D0099149F /* UIViewController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Context.swift"; sourceTree = "<group>"; };
 		2222A62A247CA0AF0099149F /* Movie+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Formatting.swift"; sourceTree = "<group>"; };
 		225191EF247DE48A0094CD3C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		225191F3247F216F0094CD3C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2280D9C92478856D00131B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Help.storyboard; sourceTree = "<group>"; };
 		2280D9CB2478862F00131B82 /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		228EBE3F24796CF500EF7A3C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +66,22 @@
 			children = (
 				221FF751247C7A0A0007300C /* MovieAdditionViewController.swift */,
 				225191EF247DE48A0094CD3C /* CategoriesTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		225191F1247F21280094CD3C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				225191F2247F21340094CD3C /* Controllers */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		225191F2247F21340094CD3C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				225191F3247F216F0094CD3C /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +263,7 @@
 		22EC2D192475F87100709117 /* MoviesLib */ = {
 			isa = PBXGroup;
 			children = (
+				225191F1247F21280094CD3C /* Map */,
 				22CFA1112479548B00CFE711 /* MovieListing */,
 				2280D9D52478874100131B82 /* MovieAddition */,
 				2280D9D12478871100131B82 /* MovieVisualization */,
@@ -339,6 +358,7 @@
 				225191F0247DE48A0094CD3C /* CategoriesTableViewController.swift in Sources */,
 				22CFA10D24794DB900CFE711 /* StackViewController.swift in Sources */,
 				22CFA1162479578300CFE711 /* HelperViewController.swift in Sources */,
+				225191F4247F216F0094CD3C /* MapViewController.swift in Sources */,
 				22CFA11024794F7100CFE711 /* UIView+isVisible.swift in Sources */,
 				2222A62B247CA0AF0099149F /* Movie+Formatting.swift in Sources */,
 				2222A623247C917D0099149F /* UIViewController+Context.swift in Sources */,
