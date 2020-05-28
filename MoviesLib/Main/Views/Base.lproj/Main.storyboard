@@ -583,7 +583,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zie-MR-scF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="map.fill" catalog="system" id="8fI-VD-3FM"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="mapIcon" id="8fI-VD-3FM"/>
                     <connections>
                         <outlet property="mapView" destination="f8q-ZN-FwP" id="9bD-If-U0n"/>
                         <outlet property="searchBar" destination="sIP-YJ-Civ" id="9rb-Bn-RAW"/>
@@ -591,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gR-Gs-8R5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="94.581280788177338"/>
+            <point key="canvasLocation" x="1566" y="95"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jnV-yv-WSz">
@@ -599,6 +599,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ylv-oZ-fVH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XUq-1Z-VoG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -607,11 +608,85 @@
                     <connections>
                         <segue destination="32A-DK-I5n" kind="relationship" relationship="viewControllers" id="xn0-u5-E6h"/>
                         <segue destination="s6L-re-6IX" kind="relationship" relationship="viewControllers" id="Bnr-lH-PcJ"/>
+                        <segue destination="QhZ-sD-CdL" kind="relationship" relationship="viewControllers" id="Jly-vA-z85"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddB-5y-wIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="-728"/>
+            <point key="canvasLocation" x="1566" y="-726"/>
+        </scene>
+        <!--Ajustes-->
+        <scene sceneID="qR3-Qx-CLJ">
+            <objects>
+                <viewController id="QhZ-sD-CdL" customClass="SettingsViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teA-W2-SfN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto play?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMS-8V-Nkc">
+                                <rect key="frame" x="35" y="109" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-bf-B6k">
+                                <rect key="frame" x="295" y="104" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.99215686270000003" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeAutoPlay:" destination="QhZ-sD-CdL" eventType="valueChanged" id="jDI-fd-Gsu"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Esquema de cores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwK-FT-ydI">
+                                <rect key="frame" x="35" y="159" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KWV-Nj-EDH">
+                                <rect key="frame" x="35" y="188" width="307" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Branco"/>
+                                    <segment title="Laranja"/>
+                                    <segment title="Azul"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeColors:" destination="QhZ-sD-CdL" eventType="valueChanged" id="Xrm-hT-oDO"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoria favorita de filmes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHA-uk-xo8">
+                                <rect key="frame" x="35" y="251" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChT-4O-8YH">
+                                <rect key="frame" x="35" y="280" width="307" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="changeCategory:" destination="QhZ-sD-CdL" eventType="editingDidEnd" id="Zx5-5p-4jV"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Syt-Hv-RQA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="obf-FL-nZv"/>
+                    <connections>
+                        <outlet property="segmentedControlColors" destination="KWV-Nj-EDH" id="5zI-4M-kdh"/>
+                        <outlet property="switchAutoPlay" destination="3qc-bf-B6k" id="c1e-7A-SPN"/>
+                        <outlet property="textFieldCategory" destination="ChT-4O-8YH" id="mBR-eH-n59"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTl-Gc-G1R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2488.8000000000002" y="94.581280788177338"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -619,8 +694,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gradient" width="600" height="120"/>
-        <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="mapIcon" width="22" height="22"/>
         <image name="movies" width="22" height="22"/>
         <image name="play" width="53" height="53"/>
+        <image name="settings" width="22" height="22"/>
     </resources>
 </document>
