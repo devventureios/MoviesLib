@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ylv-oZ-fVH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PYP-qG-NyJ">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -121,6 +121,9 @@
                                     <constraint firstAttribute="width" secondItem="Epf-jp-fyu" secondAttribute="height" id="nQT-Hz-oBz"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2M-ph-qh3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toy Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo5-eD-rJb">
                                 <rect key="frame" x="16" y="270.66666666666669" width="343" height="33.666666666666686"/>
@@ -213,6 +216,10 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxt-4q-hid">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="270.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -220,6 +227,7 @@
                             <constraint firstItem="9te-6t-r6o" firstAttribute="trailing" secondItem="Jo5-eD-rJb" secondAttribute="trailing" id="2rz-NV-iKM"/>
                             <constraint firstItem="5ul-g8-gQd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5cN-yc-12j"/>
                             <constraint firstAttribute="bottom" secondItem="5ul-g8-gQd" secondAttribute="bottom" id="7W8-I0-aQY"/>
+                            <constraint firstItem="Fxt-4q-hid" firstAttribute="height" secondItem="P4C-hE-zcA" secondAttribute="height" id="8wy-qy-AlT"/>
                             <constraint firstItem="P4C-hE-zcA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="9a7-sB-A7h"/>
                             <constraint firstItem="P4C-hE-zcA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AJy-ro-kls"/>
                             <constraint firstItem="P4C-hE-zcA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="Bdf-3u-q5b"/>
@@ -230,9 +238,12 @@
                             <constraint firstItem="G4y-5t-y84" firstAttribute="trailing" secondItem="P4C-hE-zcA" secondAttribute="trailing" id="Ln5-o3-p9M"/>
                             <constraint firstItem="P4C-hE-zcA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LwY-Dv-VYx"/>
                             <constraint firstItem="Epf-jp-fyu" firstAttribute="centerX" secondItem="P4C-hE-zcA" secondAttribute="centerX" id="MUV-dU-54c"/>
+                            <constraint firstItem="Fxt-4q-hid" firstAttribute="centerX" secondItem="P4C-hE-zcA" secondAttribute="centerX" id="OL4-KP-9NA"/>
                             <constraint firstItem="G4y-5t-y84" firstAttribute="bottom" secondItem="P4C-hE-zcA" secondAttribute="bottom" id="Olk-rj-SZ8"/>
                             <constraint firstItem="hVc-TV-rMz" firstAttribute="trailing" secondItem="9te-6t-r6o" secondAttribute="trailing" id="PjI-6I-HSn"/>
                             <constraint firstItem="5ul-g8-gQd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Q4q-Q2-Vbr"/>
+                            <constraint firstItem="Fxt-4q-hid" firstAttribute="centerY" secondItem="P4C-hE-zcA" secondAttribute="centerY" id="TGM-XE-ylf"/>
+                            <constraint firstItem="Fxt-4q-hid" firstAttribute="width" secondItem="P4C-hE-zcA" secondAttribute="width" id="Vs0-6e-AzC"/>
                             <constraint firstItem="e6T-44-hoz" firstAttribute="leading" secondItem="Jo5-eD-rJb" secondAttribute="leading" id="X0A-tL-qEh"/>
                             <constraint firstItem="P4C-hE-zcA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="Xrr-W4-f0r"/>
                             <constraint firstItem="Jo5-eD-rJb" firstAttribute="top" secondItem="P4C-hE-zcA" secondAttribute="bottom" id="afO-dP-XSB"/>
@@ -267,7 +278,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="1kE-an-X0c">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="1kE-an-X0c">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="mAg-Aw-o9C">
                             <connections>
                                 <segue destination="0uR-no-XOa" kind="show" id="g6L-Na-Ft5"/>
@@ -282,6 +293,7 @@
                         <outlet property="labelTitle" destination="Jo5-eD-rJb" id="ckW-e9-DjE"/>
                         <outlet property="labelURL" destination="y3f-ga-eKd" id="Vtq-eB-26S"/>
                         <outlet property="textViewSummary" destination="Ve7-xU-X8T" id="8Yy-Xc-ed7"/>
+                        <outlet property="viewMovieContainer" destination="Fxt-4q-hid" id="QwF-kE-qUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -297,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyB-JZ-bZj">
-                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLW-uJ-MRv" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="528.33333333333337"/>
@@ -532,6 +544,47 @@
             </objects>
             <point key="canvasLocation" x="2367" y="817"/>
         </scene>
+        <!--Live Rendering-->
+        <scene sceneID="2Ih-cl-9dd">
+            <objects>
+                <viewController id="PYP-qG-NyJ" customClass="LiveRendering" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jbE-D8-YGm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mario" translatesAutoresizingMaskIntoConstraints="NO" id="3KT-lX-f5B" customClass="CustomImageView" customModule="MoviesLib" customModuleProvider="target">
+                                <rect key="frame" x="67" y="105" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="67"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99215686270000003" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D22-34-LRX">
+                                <rect key="frame" x="67" y="393" width="240" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89879304169999996" green="0.0051942174320000001" blue="0.003730279859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Cadastrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Hsa-L7-Qjd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F62-BE-85c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3732" y="670.19704433497543"/>
+        </scene>
         <!--Filmes-->
         <scene sceneID="xa6-Va-Mgg">
             <objects>
@@ -690,11 +743,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gqI-g4-w3F"/>
+        <segue reference="g6L-Na-Ft5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gradient" width="600" height="120"/>
         <image name="mapIcon" width="22" height="22"/>
+        <image name="mario" width="480" height="480"/>
         <image name="movies" width="22" height="22"/>
         <image name="play" width="53" height="53"/>
         <image name="settings" width="22" height="22"/>

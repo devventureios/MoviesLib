@@ -15,6 +15,7 @@
 
 
 import UIKit
+import AVKit
 
 class MovieViewController: UIViewController {
 
@@ -25,14 +26,21 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var labelDuration: UILabel!
     @IBOutlet weak var labelRating: UILabel!
     @IBOutlet weak var textViewSummary: UITextView!
+    @IBOutlet weak var viewMovieContainer: UIView!
     
     var movie: Movie?
+    var trailer: String = ""
+    var moviePlayer: AVPlayer?
+    var moviePlayerController: AVPlayerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Justo for Ygor!!
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         //navigationController?.setNavigationBarHidden(true, animated: true)
+        if let title = movie?.title {
+            loadTrailer(with: title)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,4 +64,58 @@ class MovieViewController: UIViewController {
             vc.movie = movie
         }
     }
+    
+    //MARK: - IBActions
+    @IBAction func play(_ sender: UIButton) {
+        playMovie()
+    }
+    
+    //MARK: - Methods
+    private func loadTrailer(with title: String) {
+        struct APIResult: Codable {
+            let results: [Trailer]
+        }
+        struct Trailer: Codable {
+            let previewUrl: String
+        }
+        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let url = URL(string: "https://itunes.apple.com/search?media=movie&entity=movie&term=\(encodedTitle)")
+        URLSession.shared.dataTask(with: url!) { (data, _, _) in
+            let apiResult = try! JSONDecoder().decode(APIResult.self, from: data!)
+            self.trailer = apiResult.results.first!.previewUrl
+            DispatchQueue.main.async {
+                self.prepareVideo()
+                if UserDefaults.standard.bool(forKey: Key.autoplay) {
+                        self.playMovie()
+                }
+            }
+        }.resume()
+    }
+    
+    private func prepareVideo() {
+        guard let url = URL(string: trailer) else {return}
+        moviePlayer = AVPlayer(url: url)
+        moviePlayerController = AVPlayerViewController()
+        moviePlayerController?.player = moviePlayer
+        moviePlayerController?.showsPlaybackControls = true
+        
+        //Para mostrar sem ser trela cheia
+        moviePlayerController?.view.frame = viewMovieContainer.bounds
+        viewMovieContainer.addSubview(moviePlayerController!.view)
+    }
+    
+    private func playMovie() {
+        //Mostrando na view
+        viewMovieContainer.isHidden = false
+        self.moviePlayer?.play()
+        
+        /*
+         //Mostrando em tela cheia!
+        guard let moviePlayerController = moviePlayerController else {return}
+        present(moviePlayerController, animated: true) {
+            self.moviePlayer?.play()
+        }
+        */
+    }
 }
+

@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let autoplay = ud.bool(forKey: Key.autoplay)
-        switchAutoPlay.setOn(autoplay, animated: true)
+        switchAutoPlay.setOn(autoplay, animated: false)
         
         let colorIndex = ud.integer(forKey: Key.color)
         segmentedControlColors.selectedSegmentIndex = colorIndex
